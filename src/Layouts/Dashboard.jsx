@@ -23,7 +23,6 @@ import Swal from "sweetalert2";
 const Dashboard = () => {
   const [open, setOpen] = useState(true);
   const isAdmin = false;
-  // const isStudent = true;
   const location = useLocation();
   const handleLogout = () => {
     Swal.fire({
@@ -69,7 +68,7 @@ const Dashboard = () => {
   const Menus = [
     {
       title: "Dashboard",
-      path: "/admin_overview",
+      path: "/seller_overview",
       icon: iconMappings.RoleHome,
       role: "seller",
     },
@@ -205,7 +204,9 @@ const Dashboard = () => {
               }`}
             >
               <li className="flex items-center gap-x-3 text-md ">
-                <IconContext.Provider value={{ className: "react-icon text-xl" }}>
+                <IconContext.Provider
+                  value={{ className: "react-icon text-xl" }}
+                >
                   <Menu.icon />
                 </IconContext.Provider>
                 <span
@@ -245,7 +246,7 @@ const Dashboard = () => {
           <div>
             <Link
               to="/profile"
-              className={`flex items-center gap-x-2 w-full -ml-4 p-2 pl-6 cursor-pointer text-sm items-center w-full ${
+              className={`flex items-center gap-x-2 w-full -ml-4 p-2 pl-6 cursor-pointer text-sm ${
                 location.pathname === "/profile"
               }`}
             >
@@ -267,7 +268,9 @@ const Dashboard = () => {
             </Link>
             <Link
               to="/profile"
-              className={`flex items-center justify-between gap-x-2 w-full -ml-4 mt-5 ${open && "shadow rounded-xl border border-gray-200"}  py-3 px-8 cursor-pointer text-sm items-center w-full ${
+              className={`flex items-center justify-between gap-x-2 w-full -ml-4 mt-5 ${
+                open && "shadow rounded-xl border border-gray-200"
+              }  py-3 px-8 cursor-pointer text-sm items-center w-full ${
                 location.pathname === "/profile"
               }`}
             >

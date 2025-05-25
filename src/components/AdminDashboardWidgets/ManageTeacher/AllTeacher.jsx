@@ -56,15 +56,15 @@ const AllTeacher = () => {
     },
   ];
 
-  const [searchTerm, setSearchTerm] = useState("");
+  const [chTerm, setchTerm] = useState("");
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
+  const handlech = (e) => {
+    setchTerm(e.target.value);
   };
 
   const filteredTeacher = allTeacher
     .filter((teacher) =>
-      teacher.name.toLowerCase().includes(searchTerm.toLowerCase())
+      teacher.name.toLowerCase().includes(chTerm.toLowerCase())
     )
     .slice(0, 4); // Limit to 4 items
 
@@ -79,10 +79,10 @@ const AllTeacher = () => {
         </div>
         <input
           type="text"
-          placeholder="Search by name"
+          placeholder="ch by name"
           className="border border-gray-300 rounded px-2 py-1 text-sm my-3 md:my-0"
-          value={searchTerm}
-          onChange={handleSearch}
+          value={chTerm}
+          onChange={handlech}
         />
       </div>
       <div className="overflow-x-auto">

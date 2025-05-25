@@ -18,14 +18,15 @@ import AllTeam from "../components/AdminDashboardWidgets/ManageStudent/AllTeam";
 import AllAtRiskStudents from "../components/AdminDashboardWidgets/AllAtRiskStudents";
 import ExamPerformance from "../components/StudentDashboardWidgets/ProgressAndGoal/ExamPerformance";
 import UserQualification from "../Pages/Qualification/UserQualification";
+import SellerOverview from "../Pages/Dashboards/SellerDashboard/SellerOverview";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Dashboard />,
     children: [
       {
-        path: "/admin_home",
-        element: <AdminHome />,
+        path: "/seller_overview",
+        element: <SellerOverview />,
       },
       {
         path: "/student",
