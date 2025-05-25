@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react";
-import logo from '../assets/logo/logo.png';
+import logo from "../assets/logo/logo.png";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import {
-  FaUserTie,
-  FaRegChessQueen,
-  FaRegCircleUser,
-  FaRightFromBracket,
-  FaChartLine,
-  FaFileSignature,
-} from "react-icons/fa6";
+  RiCoupon3Line,
+  RiHome4Line,
+  RiUserCommunityLine,
+  RiShoppingCart2Line,
+  RiAddCircleLine,
+  RiContractLeftLine,
+  RiBankCardLine,
+  RiBox3Line,
+  RiMessageLine,
+  RiFundsBoxLine,
+  RiFunctionAddLine,
+  RiStoreLine,
+  RiExternalLinkLine,
+  RiLogoutBoxRLine,
+} from "react-icons/ri";
 import { IconContext } from "react-icons";
 import Swal from "sweetalert2";
-import {
-  RiArrowRightSLine,
-  RiGalleryView2,
-  RiBookOpenLine,
-  RiGraduationCapLine,
-} from "react-icons/ri";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(true);
@@ -52,107 +54,108 @@ const Dashboard = () => {
   }, []);
 
   const iconMappings = {
-    RoleHome: RiGalleryView2,
-    Student: RiGraduationCapLine,
-    Teacher: FaUserTie,
-    Upgrade: FaRegChessQueen,
-    Book: RiBookOpenLine,
-    Test: FaFileSignature,
-    Analytics: FaChartLine,
-    Home: RiGalleryView2,
+    RoleHome: RiHome4Line,
+    Cart: RiShoppingCart2Line,
+    Customer: RiUserCommunityLine,
+    Coupon: RiCoupon3Line,
+    Add: RiAddCircleLine,
+    Box: RiBox3Line,
+    Review: RiMessageLine,
+    Card: RiBankCardLine,
+    Category: RiFunctionAddLine,
+    Analytics: RiFundsBoxLine,
   };
 
   const Menus = [
     {
       title: "Dashboard",
       path: "/admin_overview",
-      icon: iconMappings.Home,
+      icon: iconMappings.RoleHome,
       role: "seller",
     },
     {
       title: "Order Management",
       path: "/order_management",
-      icon: iconMappings.Student,
+      icon: iconMappings.Cart,
       role: "seller",
     },
     {
       title: "Customers",
       path: "/customers",
-      icon: iconMappings.Teacher,
+      icon: iconMappings.Customer,
       role: "seller",
     },
     {
       title: "Coupon Code",
       path: "/coupon",
-      icon: iconMappings.Upgrade,
+      icon: iconMappings.Coupon,
       role: "seller",
     },
     {
       title: "Transaction",
       path: "/transaction",
-      icon: iconMappings.Home,
+      icon: iconMappings.Card,
       role: "seller",
     },
     {
       title: "Add Products",
       path: "/add_products",
-      icon: iconMappings.Upgrade,
+      icon: iconMappings.Add,
       role: "seller",
       gap: true,
     },
     {
       title: "Product List",
       path: "/product_list",
-      icon: iconMappings.Upgrade,
+      icon: iconMappings.Box,
       role: "seller",
     },
     {
       title: "Product Reviews",
       path: "/review",
-      icon: iconMappings.Upgrade,
+      icon: iconMappings.Review,
       role: "seller",
     },
     {
       title: "Dashboard",
       path: "/seller_overview",
-      icon: iconMappings.Home,
+      icon: iconMappings.RoleHome,
       role: "admin",
-      gap: true,
     },
     {
       title: "Buyer Management",
       path: "/study_plan",
-      icon: iconMappings.Book,
+      icon: iconMappings.Cart,
       role: "admin",
     },
     {
       title: "Seller Management",
       path: "/seller_management",
-      icon: iconMappings.Test,
+      icon: iconMappings.Customer,
       role: "admin",
     },
     {
       title: "Categories",
       path: "/categories",
-      icon: iconMappings.Analytics,
+      icon: iconMappings.Category,
       role: "admin",
     },
     {
       title: "Transaction",
       path: "/transaction",
-      icon: iconMappings.Upgrade,
+      icon: iconMappings.Card,
       role: "admin",
     },
     {
       title: "Activity Log",
       path: "/activity",
-      icon: iconMappings.Upgrade,
+      icon: iconMappings.Analytics,
       role: "admin",
     },
   ];
 
   const adminMenus = Menus.filter((menu) => menu.role === "admin");
-  const studentMenus = Menus.filter((menu) => menu.role === "seller");
+  const sellerMenus = Menus.filter((menu) => menu.role === "seller");
   const generalMenus = Menus.filter((menu) => menu.role === "general");
 
   return (
@@ -160,20 +163,20 @@ const Dashboard = () => {
       {/* Sidebar */}
       <div
         className={` ${
-          open ? "w-64 p-4" : "w-14 text-center"
-        } h-screen bg-base-300 fixed left-0 top-0 bottom-0 z-50 pt-8 transition-all duration-500`}
+          open ? "w-64 p-4" : "w-20 text-center"
+        } h-screen shadow-lg border-r border-gray-200 fixed left-0 top-0 bottom-0 z-50 pt-8 transition-all duration-500`}
       >
-        <RiArrowRightSLine
-          className={`absolute cursor-pointer -right-5 text-gray-400 bg-base-300 shadow-2xl top-9 w-10 h-10 rounded-full ${
+        <RiContractLeftLine
+          className={`absolute cursor-pointer right-1 text-gray-600 top-5 rounded-full ${
             !open && "rotate-180"
           }`}
           onClick={() => setOpen(!open)}
         />
-        <div className="flex items-center gap-x-4 p-2">
+        <div className="p-2">
           <img
             src={logo}
             alt="logo"
-            className={`cursor-pointer w-14 p-1 duration-500`}
+            className={`cursor-pointer w-10 duration-500 ${!open && "w-full "}`}
           />
         </div>
 
@@ -182,21 +185,27 @@ const Dashboard = () => {
             open ? "" : "flex flex-col items-center justify-center"
           }`}
         >
-          <p className="text-xs text-gray-800 px-3 mt-10">Main menu</p>
-          {(isAdmin ? adminMenus : studentMenus).map((Menu, index) => (
+          <p
+            className={`text-sm text-gray-800 px-2 mt-3 ${
+              open ? "flex" : "hidden"
+            }`}
+          >
+            Main menu
+          </p>
+          {(isAdmin ? adminMenus : sellerMenus).map((Menu, index) => (
             <Link
               to={Menu.path}
               key={index}
-              className={`flex rounded-full py-1.5 px-4 cursor-pointer text-sm items-center ${
+              className={`flex rounded py-1.5 px-4 cursor-pointer text-sm items-center ${
                 Menu.gap ? "mt-20" : "mt-2"
               } ${
                 location.pathname === Menu.path
-                  ? "bg-white text-blue-500"
-                  : "hover:bg-white"
+                  ? "bg-[#006850] text-white"
+                  : "hover:bg-[#006850]/10"
               }`}
             >
-              <li className="flex items-center gap-x-2 text-md ">
-                <IconContext.Provider value={{ className: "react-icon" }}>
+              <li className="flex items-center gap-x-3 text-md ">
+                <IconContext.Provider value={{ className: "react-icon text-xl" }}>
                   <Menu.icon />
                 </IconContext.Provider>
                 <span
@@ -232,38 +241,57 @@ const Dashboard = () => {
         </ul>
 
         {/* Profile + Logout */}
-        <div className="mt-28 ms-3.5 md:ms-0 bottom-20 absolute w-full">
-          <Link
-            to="/profile"
-            className={`-ml-3.5 flex p-2 pl-6 cursor-pointer text-sm items-center w-full ${
-              location.pathname === "/profile" ? "bg-white" : "hover:bg-white"
-            }`}
-          >
-            <li className="flex items-center gap-x-4 w-full">
-              <FaRegCircleUser />
-              <span className={`${!open && "hidden"} origin-left duration-200`}>
-                Profile
+        <div className="mt-28 ms-3.5 md:ms-0 p-2 bottom-20 absolute w-full">
+          <div>
+            <Link
+              to="/profile"
+              className={`flex items-center gap-x-2 w-full -ml-4 p-2 pl-6 cursor-pointer text-sm items-center w-full ${
+                location.pathname === "/profile"
+              }`}
+            >
+              <img
+                src="https://randomuser.me/api/portraits/men/31.jpg"
+                alt=""
+                className={`w-10 rounded-full ${!open && "hidden"}`}
+              />
+              <span className={`${!open && "hidden"}`}>
+                <p className="font-bold">Deal port</p>
+                <p>user@user.com</p>
               </span>
-            </li>
-          </Link>
-          <button
-            onClick={handleLogout}
-            className="flex text-red-400 p-2 text-sm items-center cursor-pointer w-full"
-          >
-            <li className="flex items-center gap-x-4 w-full">
-              <FaRightFromBracket />
-              <span className={`${!open && "hidden"} origin-left duration-200`}>
-                Logout
+              <button
+                onClick={handleLogout}
+                className={`text-2xl ${!open && "ms-4"}`}
+              >
+                <RiLogoutBoxRLine />
+              </button>
+            </Link>
+            <Link
+              to="/profile"
+              className={`flex items-center justify-between gap-x-2 w-full -ml-4 mt-5 ${open && "shadow rounded-xl border border-gray-200"}  py-3 px-8 cursor-pointer text-sm items-center w-full ${
+                location.pathname === "/profile"
+              }`}
+            >
+              <div className="flex items-center gap-x-2">
+                <span className={`text-2xl ${!open && "hidden"}`}>
+                  {" "}
+                  <RiStoreLine />{" "}
+                </span>
+                <span className={`${!open && "hidden"}`}>
+                  <p className="font-bold">Your Shop</p>
+                </span>
+              </div>
+              <span className={`text-2xl ${!open && ""}`}>
+                <RiExternalLinkLine />
               </span>
-            </li>
-          </button>
+            </Link>
+          </div>
         </div>
       </div>
 
       {/* Main Content Area */}
       <div
         className={` ${
-          open ? "pl-64 pr-4" : "pl-14 pr-2"
+          open ? "pl-64 pr-4" : "pl-20 pr-2"
         } flex-1 overflow-y-auto transition-all duration-500 h-[100vh]`}
       >
         <Outlet />
