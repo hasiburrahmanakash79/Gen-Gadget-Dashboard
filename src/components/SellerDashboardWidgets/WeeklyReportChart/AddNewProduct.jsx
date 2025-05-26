@@ -1,7 +1,13 @@
-import { RiSearchLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { RiAddCircleLine } from "react-icons/ri";
 
 const sortedData = [
+  {
+    image:
+      "https://udaipurkiran.com/wp-content/uploads/2024/04/iPhone-16-Pro.webp",
+    productName: "iphone 16 pro max",
+    productCode: "PRD001",
+    price: 1059.99,
+  },
   {
     image:
       "https://udaipurkiran.com/wp-content/uploads/2024/04/iPhone-16-Pro.webp",
@@ -45,39 +51,35 @@ const AddNewProduct = () => {
   return (
     <div className="p-5 border border-gray-100 rounded-2xl shadow">
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-semibold">Top Products</h1>
-        <Link to="/" className="text-indigo-600 underline">
-          All Products
-        </Link>
+        <h1 className="text-2xl font-semibold">Add New Product</h1>
+        <button className="text-indigo-600 underline">Add new</button>
       </div>
-      <div>
-        <div className="relative py-5">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="w-full py-2 ps-4 bg-gray-100 rounded-full text-sm focus:outline-none"
-          />
-          <span className="absolute inset-y-0 right-3 flex items-center text-gray-400">
-            <RiSearchLine className="text-lg" />
-          </span>
-        </div>
-      </div>
+      <p className="text-gray-500 text-xs">Categories</p>
       <div className="overflow-x-auto">
         <table className="w-full text-sm text-left">
           <tbody>
             {sortedData.map((product, idx) => (
               <tr key={idx} className="border-b border-gray-200 ">
                 <td>
-                  <div className="w-16 rounded">
+                  <div className="w-14 rounded">
                     <img src={product.image} alt="" className="rounded" />
                   </div>
                 </td>
                 <td className="py-3.5">
                   <p className="font-bold">{product.productName}</p>
-                  <p className="text-xs">{product.productCode}</p>
+                  <p className="text-xs text-[#006850] font-bold">
+                    ${product.price}
+                  </p>
                 </td>
 
-                <td>${product.price.toFixed(2)}</td>
+                <td className="py-3.5">
+                  <div className="flex justify-end">
+                    <button className="bg-[#006850] py-1 px-2 text-white rounded-full flex items-center gap-1">
+                      <RiAddCircleLine />
+                      Add
+                    </button>
+                  </div>
+                </td>
               </tr>
             ))}
           </tbody>
