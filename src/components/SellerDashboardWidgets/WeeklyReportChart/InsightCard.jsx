@@ -1,7 +1,7 @@
 import { BarChart, Bar, ResponsiveContainer } from "recharts";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 
-const barData = Array.from({ length: 30 }, (_, i) => ({
+const barData = Array.from({ length: 30 }, () => ({
   value: Math.floor(Math.random() * 30 + 10),
 }));
 
@@ -31,7 +31,7 @@ const countries = [
 
 const InsightCard = () => {
   return (
-    <div className="bg-white rounded-xl shadow p-5 w-full max-w-md">
+    <div className="bg-white rounded-xl shadow p-5 w-full">
       {/* Top Info */}
       <div className="text-sm text-indigo-600 font-medium">Users in last 30 minutes</div>
       <div className="text-3xl font-bold text-gray-800 mt-1 mb-4">21.5K</div>

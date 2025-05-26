@@ -3,7 +3,7 @@ import Signup from "../Pages/Authentication/Signup";
 import SignIn from "../Pages/Authentication/SignIn";
 import OtpVerification from "../Pages/Authentication/OtpVerification";
 import Dashboard from "../Layouts/Dashboard";
-import AdminHome from "../Pages/Dashboards/AdminDashboard/AdminHome";
+// import AdminHome from "../Pages/Dashboards/AdminDashboard/AdminHome";
 import ManageStudents from "../Pages/Dashboards/AdminDashboard/ManageStudents";
 import UpgradePage from "../Pages/Dashboards/AdminDashboard/UpgradePage";
 import ProfilePage from "../Pages/Dashboards/Profile/ProfilePage";
