@@ -338,7 +338,7 @@ export default function AllOrderTable() {
       <div className="flex justify-between items-center mt-4">
         <button
           onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-          className="px-3 py-1 border rounded-md"
+          className="px-3 py-1 border border-gray-100 rounded-md"
         >
           Previous
         </button>
@@ -347,8 +347,8 @@ export default function AllOrderTable() {
             <button
               key={i}
               onClick={() => setCurrentPage(i + 1)}
-              className={`px-3 py-1 border rounded-md ${
-                currentPage === i + 1 ? "bg-green-200" : "bg-white"
+              className={`px-3 py-1 rounded-md text-green-500 font-semibold ${
+                currentPage === i + 1 ? "bg-[#07816533]" : "border border-gray-200"
               }`}
             >
               {i + 1}
@@ -357,7 +357,7 @@ export default function AllOrderTable() {
         </div>
         <button
           onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-          className="px-3 py-1 border rounded-md"
+          className="px-3 py-1 border border-gray-100 rounded-md"
         >
           Next
         </button>
