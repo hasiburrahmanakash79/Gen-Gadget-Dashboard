@@ -4,7 +4,7 @@ import SignIn from "../Pages/Authentication/SignIn";
 import OtpVerification from "../Pages/Authentication/OtpVerification";
 import Dashboard from "../Layouts/Dashboard";
 // import AdminHome from "../Pages/Dashboards/AdminDashboard/AdminHome";
-import ManageStudents from "../Pages/Dashboards/AdminDashboard/ManageStudents";
+// import ManageStudents from "../Pages/Dashboards/AdminDashboard/ManageStudents";
 import UpgradePage from "../Pages/Dashboards/AdminDashboard/UpgradePage";
 import ProfilePage from "../Pages/Dashboards/Profile/ProfilePage";
 import StudentHome from "../Pages/Dashboards/StudentDashboard/StudentHome";
@@ -19,6 +19,7 @@ import AllAtRiskStudents from "../components/AdminDashboardWidgets/AllAtRiskStud
 import ExamPerformance from "../components/StudentDashboardWidgets/ProgressAndGoal/ExamPerformance";
 import UserQualification from "../Pages/Qualification/UserQualification";
 import SellerOverview from "../Pages/Dashboards/SellerDashboard/SellerOverview";
+import OrderManagement from "../Pages/Dashboards/SellerDashboard/OrderManagement";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,8 +30,8 @@ const router = createBrowserRouter([
         element: <SellerOverview />,
       },
       {
-        path: "/student",
-        element: <ManageStudents />,
+        path: "/order_management",
+        element: <OrderManagement />,
       },
       {
         path: "/top-performing-students",
