@@ -1,4 +1,5 @@
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import AllOrderTable from "../../../components/SellerDashboardWidgets/OrderManageCard/AllOrderTable";
 import OrderManageCard from "../../../components/SellerDashboardWidgets/OrderManageCard/OrderManageCard";
 
 
@@ -8,6 +9,9 @@ const OrderManagement = () => {
             <SectionTitle title="Order Management" />
             <div>
                 <OrderManageCard/>
+            </div>
+            <div>
+                <AllOrderTable/>
             </div>
             
         </div>
