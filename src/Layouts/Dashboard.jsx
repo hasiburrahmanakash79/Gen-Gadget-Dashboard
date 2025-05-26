@@ -242,7 +242,7 @@ const Dashboard = () => {
         </ul>
 
         {/* Profile + Logout */}
-        <div className="mt-28 ms-3.5 md:ms-0 p-2 bottom-20 absolute w-full">
+        <div className="mt-28 ms-3.5 md:ms-0 p-2 bottom-2 absolute w-full">
           <div>
             <Link
               to="/profile"

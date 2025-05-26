@@ -49,7 +49,7 @@ const WeeklyReportChart = () => {
   const data = getChartData();
 
   return (
-    <div className="bg-white p-5 rounded-xl shadow-sm">
+    <div className="bg-white p-5 rounded-xl shadow-sm border border-gray-100">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg font-semibold">Report for this week</h2>
         <div className="flex gap-2 bg-gray-100 rounded-xl text-sm p-1">

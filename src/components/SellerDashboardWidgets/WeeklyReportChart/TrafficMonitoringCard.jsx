@@ -16,7 +16,23 @@ const trafficData = [
   { minute: 13, users: 10 },
   { minute: 14, users: 9 },
   { minute: 15, users: 11 },
+  { minute: 16, users: 14 },
+  { minute: 17, users: 12 },
+  { minute: 18, users: 17 },
+  { minute: 19, users: 13 },
+  { minute: 20, users: 15 },
+  { minute: 21, users: 16 },
+  { minute: 22, users: 11 },
+  { minute: 23, users: 10 },
+  { minute: 24, users: 18 },
+  { minute: 25, users: 9 },
+  { minute: 26, users: 19 },
+  { minute: 27, users: 14 },
+  { minute: 28, users: 12 },
+  { minute: 29, users: 13 },
+  { minute: 30, users: 17 },
 ];
+
 
 const countryData = [
   {
@@ -44,7 +60,7 @@ const countryData = [
 
 export default function TrafficMonitoringCard() {
   return (
-    <div className="p-4 rounded-2xl shadow-sm w-full">
+    <div className="p-4 rounded-2xl shadow-sm w-full border border-gray-100">
       <div className="flex items-center justify-between mb-2">
         <p className="text-sm text-indigo-600">Users in last 30 minutes</p>
         <button className="text-gray-400 hover:text-gray-600">
@@ -62,7 +78,7 @@ export default function TrafficMonitoringCard() {
             <Bar
               dataKey="users"
               fill="#059669"
-              radius={[4, 4, 0, 0]}
+              radius={[2, 2, 0, 0]}
               barSize={8}
             />
           </BarChart>

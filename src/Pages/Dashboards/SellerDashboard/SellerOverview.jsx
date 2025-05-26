@@ -1,5 +1,6 @@
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import DashboardCard from "../../../components/SellerDashboardWidgets/DashboardCard/DashboardCard";
+import TransectionOverview from "../../../components/SellerDashboardWidgets/TransectionAndTopProducts/TransectionOverview";
 // import InsightCard from "../../../components/SellerDashboardWidgets/WeeklyReportChart/InsightCard";
 import TrafficMonitoringCard from "../../../components/SellerDashboardWidgets/WeeklyReportChart/TrafficMonitoringCard";
 import WeeklyReportChart from "../../../components/SellerDashboardWidgets/WeeklyReportChart/WeeklyReportChart";
@@ -16,6 +17,11 @@ const SellerOverview = () => {
         <div>
           {/* <InsightCard/> */}
           <TrafficMonitoringCard />
+        </div>
+      </div>
+      <div className="grid grid-cols-3 gap-5 mt-5">
+        <div className="col-span-2">
+            <TransectionOverview/>
         </div>
       </div>
     </div>
