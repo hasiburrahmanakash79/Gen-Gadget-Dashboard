@@ -8,12 +8,13 @@ import Dashboard from "../Layouts/Dashboard";
 import UpgradePage from "../Pages/Dashboards/AdminDashboard/UpgradePage";
 import ProfilePage from "../Pages/Dashboards/Profile/ProfilePage";
 // import AllTopPerformingStudents from "../components/AdminDashboardWidgets/AllTopPerformingStudents";
-import AllTeam from "../components/AdminDashboardWidgets/ManageStudent/AllTeam";
+// import AllTeam from "../components/AdminDashboardWidgets/ManageStudent/AllTeam";
 import AllAtRiskStudents from "../components/AdminDashboardWidgets/AllAtRiskStudents";
 import UserQualification from "../Pages/Qualification/UserQualification";
 import SellerOverview from "../Pages/Dashboards/SellerDashboard/SellerOverview";
 import OrderManagement from "../Pages/Dashboards/SellerDashboard/OrderManagement";
 import Customers from "../Pages/Dashboards/SellerDashboard/Customers";
+import Transaction from "../Pages/Dashboards/SellerDashboard/Transaction";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,8 +33,8 @@ const router = createBrowserRouter([
         element: <Customers />,
       },
       {
-        path: "/all_teams",
-        element: <AllTeam />,
+        path: "/transaction",
+        element: <Transaction />,
       },
       {
         path: "/at_risk_students",
