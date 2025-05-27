@@ -9,12 +9,13 @@ import UpgradePage from "../Pages/Dashboards/AdminDashboard/UpgradePage";
 import ProfilePage from "../Pages/Dashboards/Profile/ProfilePage";
 // import AllTopPerformingStudents from "../components/AdminDashboardWidgets/AllTopPerformingStudents";
 // import AllTeam from "../components/AdminDashboardWidgets/ManageStudent/AllTeam";
-import AllAtRiskStudents from "../components/AdminDashboardWidgets/AllAtRiskStudents";
+// import AllAtRiskStudents from "../components/AdminDashboardWidgets/AllAtRiskStudents";
 import UserQualification from "../Pages/Qualification/UserQualification";
 import SellerOverview from "../Pages/Dashboards/SellerDashboard/SellerOverview";
 import OrderManagement from "../Pages/Dashboards/SellerDashboard/OrderManagement";
 import Customers from "../Pages/Dashboards/SellerDashboard/Customers";
 import Transaction from "../Pages/Dashboards/SellerDashboard/Transaction";
+import CouponCode from "../Pages/Dashboards/SellerDashboard/CouponCode";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,8 +38,8 @@ const router = createBrowserRouter([
         element: <Transaction />,
       },
       {
-        path: "/at_risk_students",
-        element: <AllAtRiskStudents />,
+        path: "/coupon",
+        element: <CouponCode />,
       },
       {
         path: "/upgrade",
