@@ -22,7 +22,7 @@ import Swal from "sweetalert2";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(true);
-  const isAdmin = false;
+  const isAdmin = true;
   const location = useLocation();
   const handleLogout = () => {
     Swal.fire({
@@ -117,13 +117,13 @@ const Dashboard = () => {
     },
     {
       title: "Dashboard",
-      path: "/seller_overview",
+      path: "/admin_overview",
       icon: iconMappings.RoleHome,
       role: "admin",
     },
     {
       title: "Buyer Management",
-      path: "/study_plan",
+      path: "/buyer_management",
       icon: iconMappings.Cart,
       role: "admin",
     },
