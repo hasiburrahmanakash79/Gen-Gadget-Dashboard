@@ -84,14 +84,14 @@ const CustomerOverviewChart = () => {
               {week === "this"
                 ? thisWeekData[tab.key].slice(-1)[0]
                 : lastWeekData[tab.key].slice(-1)[0]}
-              {tab.key === "conversion" ? "" : tab.key === "customers" ? "" : ""}
             </div>
             <div className="text-xs">{tab.label}</div>
           </div>
         ))}
       </div>
 
-      <div className="h-full -ml-4">
+      {/* Fixed height container for ResponsiveContainer */}
+      <div className="h-96 -ml-4">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data} margin={{ left: 20, right: 20 }}>
             <defs>
