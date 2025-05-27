@@ -5,7 +5,7 @@ import OtpVerification from "../Pages/Authentication/OtpVerification";
 import Dashboard from "../Layouts/Dashboard";
 // import AdminHome from "../Pages/Dashboards/AdminDashboard/AdminHome";
 // import ManageStudents from "../Pages/Dashboards/AdminDashboard/ManageStudents";
-import UpgradePage from "../Pages/Dashboards/AdminDashboard/UpgradePage";
+// import UpgradePage from "../Pages/Dashboards/AdminDashboard/UpgradePage";
 import ProfilePage from "../Pages/Dashboards/Profile/ProfilePage";
 // import AllTopPerformingStudents from "../components/AdminDashboardWidgets/AllTopPerformingStudents";
 // import AllTeam from "../components/AdminDashboardWidgets/ManageStudent/AllTeam";
@@ -16,6 +16,7 @@ import OrderManagement from "../Pages/Dashboards/SellerDashboard/OrderManagement
 import Customers from "../Pages/Dashboards/SellerDashboard/Customers";
 import Transaction from "../Pages/Dashboards/SellerDashboard/Transaction";
 import CouponCode from "../Pages/Dashboards/SellerDashboard/CouponCode";
+import AddNewProduct from "../Pages/Dashboards/SellerDashboard/AddNewProduct";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,8 +43,8 @@ const router = createBrowserRouter([
         element: <CouponCode />,
       },
       {
-        path: "/upgrade",
-        element: <UpgradePage />,
+        path: "/add_products",
+        element: <AddNewProduct />,
       },
       {
         path: "/profile",
