@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { FiSearch, FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { MdLocalShipping } from "react-icons/md";
 import {
-  MdOutlineDone,
-  MdPending,
-  MdCancel,
-  MdLocalShipping,
-} from "react-icons/md";
+  RiArrowLeftLine,
+  RiArrowRightLine,
+  RiArrowUpDownLine,
+  RiSearchLine,
+} from "react-icons/ri";
 
 const ordersData = [
   {
@@ -237,48 +237,50 @@ export default function AllOrderTable() {
   );
 
   const statusIcon = {
-    Delivered: <MdOutlineDone className="text-green-500" />,
-    Pending: <MdPending className="text-yellow-500" />,
-    Cancelled: <MdCancel className="text-red-500" />,
-    Shipped: <MdLocalShipping className="text-gray-700" />,
+    Delivered: <MdLocalShipping />,
+    Pending: <MdLocalShipping />,
+    Cancelled: <MdLocalShipping />,
+    Shipped: <MdLocalShipping />,
   };
 
   return (
-    <div className="p-6">
+    <div className="p-6 border border-gray-100 rounded-lg bg-white shadow mt-5">
       <div className="flex items-center justify-between mb-4">
         <div className="space-x-2 bg-[#0781651A] p-2 rounded">
-          {["All", "Delivered", "Pending", "Cancelled"].map((tab) => (
-            <button
-              key={tab}
-              className={`px-10 py-2 rounded-md text-sm font-medium ${
-                activeTab === tab
-                  ? "bg-white text-green-700 shadow transform duration-300"
-                  : "text-green-700"
-              }`}
-              onClick={() => {
-                setActiveTab(tab === "Delivered" ? "Delivered" : tab);
-                setCurrentPage(1);
-              }}
-            >
-              {tab}
-            </button>
-          ))}
+          {["All", "Delivered", "Shipped", "Pending", "Cancelled"].map(
+            (tab) => (
+              <button
+                key={tab}
+                className={`px-10 py-2 rounded-md text-sm font-medium ${
+                  activeTab === tab
+                    ? "bg-white text-green-700 shadow transform duration-300"
+                    : "text-green-700"
+                }`}
+                onClick={() => {
+                  setActiveTab(tab === "Delivered" ? "Delivered" : tab);
+                  setCurrentPage(1);
+                }}
+              >
+                {tab}
+              </button>
+            )
+          )}
         </div>
         <div className="flex items-center space-x-2">
           <div className="relative">
             <input
               type="text"
-              className="pl-8 pr-4 py-2 bg-gray-100 rounded-md text-sm"
+              className="px-8 py-2 bg-gray-100 rounded-md text-sm outline-none"
               placeholder="Search order report"
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <FiSearch className="absolute top-2.5 left-2.5 text-gray-500" />
+            <RiSearchLine className="absolute top-2.5 left-2.5 text-gray-500" />
           </div>
           <button
             onClick={() => setSortAsc(!sortAsc)}
-            className="p-2 border rounded-md"
+            className="p-2 border border-gray-200 text-gray-500 rounded-md"
           >
-            {sortAsc ? <FiChevronUp /> : <FiChevronDown />}
+            <RiArrowUpDownLine />
           </button>
         </div>
       </div>
@@ -299,7 +301,7 @@ export default function AllOrderTable() {
           </thead>
           <tbody>
             {paginatedOrders.map((order, idx) => (
-              <tr key={order.id} className="border-b border-gray-100">
+              <tr key={order.id} className="border-b border-gray-100 text-gray-700">
                 <td className="p-5">
                   <input
                     type="checkbox"
@@ -325,7 +327,17 @@ export default function AllOrderTable() {
                     {order.payment}
                   </span>
                 </td>
-                <td className="p-2 flex items-center gap-2">
+                <td
+                  className={`p-5 flex items-center gap-2 ${
+                    order.status === "Delivered"
+                      ? "text-green-500"
+                      : order.status === "Pending"
+                      ? "text-yellow-500"
+                      : order.status === "Cancelled"
+                      ? "text-red-500"
+                      : "text-gray-700"
+                  }`}
+                >
                   {statusIcon[order.status]}
                   <span className="capitalize">{order.status}</span>
                 </td>
@@ -338,8 +350,9 @@ export default function AllOrderTable() {
       <div className="flex justify-between items-center mt-4">
         <button
           onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-          className="px-3 py-1 border border-gray-100 rounded-md"
+          className="px-3 py-1 border border-gray-100 rounded-md flex items-center gap-2"
         >
+          <RiArrowLeftLine />
           Previous
         </button>
         <div className="space-x-2">
@@ -348,7 +361,9 @@ export default function AllOrderTable() {
               key={i}
               onClick={() => setCurrentPage(i + 1)}
               className={`px-3 py-1 rounded-md text-green-500 font-semibold ${
-                currentPage === i + 1 ? "bg-[#07816533]" : "border border-gray-200"
+                currentPage === i + 1
+                  ? "bg-[#07816533]"
+                  : "border border-gray-200"
               }`}
             >
               {i + 1}
@@ -357,9 +372,9 @@ export default function AllOrderTable() {
         </div>
         <button
           onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-          className="px-3 py-1 border border-gray-100 rounded-md"
+          className="px-3 py-1 border border-gray-100 rounded-md flex items-center gap-2"
         >
-          Next
+          Next <RiArrowRightLine />
         </button>
       </div>
     </div>
