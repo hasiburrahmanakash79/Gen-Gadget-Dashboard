@@ -13,13 +13,14 @@ import Analytics from "../Pages/Dashboards/StudentDashboard/Analytics";
 import SubjectGrowthChart from "../components/StudentDashboardWidgets/Analytics/SubjectGrothChart";
 import TestCenter from "../Pages/Dashboards/StudentDashboard/TestCenter";
 import WrittenExam from "../components/StudentDashboardWidgets/TestCenter/WrittenExam";
-import AllTopPerformingStudents from "../components/AdminDashboardWidgets/AllTopPerformingStudents";
+// import AllTopPerformingStudents from "../components/AdminDashboardWidgets/AllTopPerformingStudents";
 import AllTeam from "../components/AdminDashboardWidgets/ManageStudent/AllTeam";
 import AllAtRiskStudents from "../components/AdminDashboardWidgets/AllAtRiskStudents";
 import ExamPerformance from "../components/StudentDashboardWidgets/ProgressAndGoal/ExamPerformance";
 import UserQualification from "../Pages/Qualification/UserQualification";
 import SellerOverview from "../Pages/Dashboards/SellerDashboard/SellerOverview";
 import OrderManagement from "../Pages/Dashboards/SellerDashboard/OrderManagement";
+import Customers from "../Pages/Dashboards/SellerDashboard/Customers";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,8 +35,8 @@ const router = createBrowserRouter([
         element: <OrderManagement />,
       },
       {
-        path: "/top-performing-students",
-        element: <AllTopPerformingStudents />,
+        path: "/customers",
+        element: <Customers />,
       },
       {
         path: "/all_teams",
