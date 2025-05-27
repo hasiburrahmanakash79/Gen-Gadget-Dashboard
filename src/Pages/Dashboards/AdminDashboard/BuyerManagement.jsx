@@ -145,14 +145,14 @@ const buyerData = [
 
 const BuyerManagement = () => {
     const [showModal, setShowModal] = useState(false);
-  const [setSelectedBuyer, setSelectedBuyersetSelectedBuyer] = useState(null);
+  const [selectedBuyer, setSelectedBuyer] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortAsc, setSortAsc] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
   // Filter by name or phone search
-  const filteredBuyersetSelectedBuyers = buyerData
+  const filteredBuyer = buyerData
     .filter(
       (cust) =>
         cust.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -165,8 +165,8 @@ const BuyerManagement = () => {
       return 0;
     });
 
-  const totalPages = Math.ceil(filteredBuyersetSelectedBuyers.length / itemsPerPage);
-  const paginatedBuyersetSelectedBuyers = filteredBuyersetSelectedBuyers.slice(
+  const totalPages = Math.ceil(filteredBuyer.length / itemsPerPage);
+  const paginatedBuyer = filteredBuyer.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
@@ -221,7 +221,7 @@ const BuyerManagement = () => {
             </tr>
           </thead>
           <tbody>
-            {paginatedBuyersetSelectedBuyers.map((cust, idx) => (
+            {paginatedBuyer.map((cust, idx) => (
               <tr
                 key={cust.id}
                 className="border-b border-gray-100 text-gray-700 hover:bg-gray-50"
@@ -241,7 +241,7 @@ const BuyerManagement = () => {
                     title="Edit"
                     className="text-gray-500 hover:text-blue-800"
                     onClick={() => {
-                      setSelectedBuyersetSelectedBuyer(cust);
+                      setSelectedBuyer(cust);
                       setShowModal(true);
                     }}
                   >
@@ -250,17 +250,17 @@ const BuyerManagement = () => {
                   <button
                     title="Delete"
                     className="text-gray-500 hover:text-red-600"
-                    onClick={() => alert(`Delete BuyersetSelectedBuyer ${cust.name}`)}
+                    onClick={() => alert(`Delete Buyer ${cust.name}`)}
                   >
                     <RiDeleteBin6Line size={20} />
                   </button>
                 </td>
               </tr>
             ))}
-            {paginatedBuyersetSelectedBuyers.length === 0 && (
+            {paginatedBuyer.length === 0 && (
               <tr>
                 <td colSpan="7" className="text-center py-6 text-gray-500">
-                  No BuyersetSelectedBuyers found
+                  No Buyer found
                 </td>
               </tr>
             )}
@@ -302,7 +302,7 @@ const BuyerManagement = () => {
       </div>
 
       <CommonModal isOpen={showModal} onClose={() => setShowModal(false)}>
-        {setSelectedBuyer && (
+        {selectedBuyer && (
           <div className="p-4">
             <div className="flex items-center gap-3 mb-4">
               <img
@@ -311,10 +311,10 @@ const BuyerManagement = () => {
               />
               <div>
                 <h2 className="font-bold text-lg text-[#004D40]">
-                  {setSelectedBuyer.name}
+                  {selectedBuyer.name}
                 </h2>
                 <p className="text-sm text-gray-500">
-                  {setSelectedBuyer.name.toLowerCase().split(" ").join(".")}
+                  {selectedBuyer.name.toLowerCase().split(" ").join(".")}
                   @example.com
                 </p>
               </div>
@@ -328,7 +328,7 @@ const BuyerManagement = () => {
                 <span className="">
                   <RiPhoneLine />
                 </span>
-                {setSelectedBuyer.phone}
+                {selectedBuyer.phone}
               </div>
               <div className="flex items-center gap-2 border border-gray-200 px-3 py-2 rounded text-sm">
                 <RiMapPinLine />
