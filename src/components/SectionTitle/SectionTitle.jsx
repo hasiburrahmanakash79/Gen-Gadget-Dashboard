@@ -67,7 +67,7 @@ const SectionTitle = ({ title }) => {
         </div>
 
         {/* 🔔 Notification Bell */}
-        <button className="relative" onClick={() => setOpen(!open)}>
+        <button className="relative cursor-pointer" onClick={() => setOpen(!open)}>
           <FaRegBell className="text-2xl text-gray-700" />
           <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-500 ring-2 ring-white"></span>
         </button>
@@ -76,12 +76,12 @@ const SectionTitle = ({ title }) => {
         <img
           src="https://randomuser.me/api/portraits/men/55.jpg"
           alt="User"
-          className="w-9 h-9 rounded-full object-cover"
+          className="w-9 h-9 rounded-full object-cover cursor-pointer hover:opacity-80 transition-opacity duration-200"
         />
 
         {/* 🔽 Dropdown */}
         {open && (
-          <div className="absolute right-0 top-16 w-96 bg-white rounded-xl shadow-xl z-50 border border-gray-200">
+          <div className="absolute right-0 top-16 w-96 bg-white rounded-xl shadow-xl z-50 border border-gray-100">
             <div className="py-2 px-5 shadow font-semibold text-gray-700">
               Notifications
             </div>
