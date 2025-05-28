@@ -26,10 +26,9 @@ const Signup = () => {
   return (
     <div className="grid grid-cols-7 min-h-screen bg-base-200">
       {/* Left Side */}
-      <div className="col-span-3 bg-blue-500 flex items-center p-8">
-        <h2 className="text-white text-4xl font-bold leading-relaxed">
-          Welcome Back! Verify Your <br /> Email to Access Your <br /> Learning
-          Portal!
+      <div className="col-span-3 bg-[#006850] place-content-center place-items-center p-8">
+        <h2 className="text-white text-4xl font-bold leading-relaxed text-center">
+          Welcome Back! Verify Your <br /> Email to Access Your
         </h2>
       </div>
 
@@ -41,7 +40,7 @@ const Signup = () => {
           </h2>
           <p className="text-center text-sm mb-6">
             Already have an Account?{" "}
-            <Link to="/signup" className="text-blue-500 hover:underline">
+            <Link to="/signup" className="text-[#006850] hover:underline">
               Sign In
             </Link>
           </p>
@@ -60,7 +59,7 @@ const Signup = () => {
                       required: "First is required",
                     })}
                     placeholder="first name"
-                    className="w-full border border-base-300 bg-base-200 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full border border-base-300 bg-base-200 rounded-md p-2 focus:outline-none"
                   />
                   <FaUser className="absolute inset-y-3 right-3 flex items-center text-gray-500" />
                 </div>
@@ -81,7 +80,7 @@ const Signup = () => {
                       required: "Last is required",
                     })}
                     placeholder="Last name"
-                    className="w-full border border-base-300 bg-base-200 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full border border-base-300 bg-base-200 rounded-md p-2 focus:outline-none"
                   />
                   <FaUser className="absolute inset-y-3 right-3 flex items-center text-gray-500" />
                 </div>
@@ -103,7 +102,7 @@ const Signup = () => {
                     required: "Email or phone number is required",
                   })}
                   placeholder="Email or Phone Number"
-                  className="w-full border border-base-300 bg-base-200 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-base-300 bg-base-200 rounded-md p-2 focus:outline-none"
                 />
                 <FaMailBulk className="absolute inset-y-3 right-3 flex items-center text-gray-500" />
               </div>
@@ -123,7 +122,7 @@ const Signup = () => {
                     required: "Password is required",
                   })}
                   placeholder="Enter your Password"
-                  className="w-full border border-base-300 bg-base-200 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-base-300 bg-base-200 rounded-md p-2 focus:outline-none"
                 />
                 <button
                   type="button"
@@ -149,7 +148,7 @@ const Signup = () => {
                   I agree to the{" "}
                   <Link
                     to="/terms"
-                    className="text-blue-500 ps-1 hover:underline"
+                    className="text-[#006850] ps-1 hover:underline"
                   >
                     Terms and Conditions
                   </Link>
@@ -159,7 +158,7 @@ const Signup = () => {
 
             <button
               type="submit"
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-md"
+              className="w-full bg-[#006850] text-white font-semibold py-2 rounded-md"
             >
               Sign Up
             </button>
@@ -190,7 +189,7 @@ const Signup = () => {
           
           <p className="text-center text-sm mt-6">
             Already have an account?{" "}
-            <Link to="/signin" className="text-blue-500 hover:underline">
+            <Link to="/signin" className="text-[#006850] hover:underline">
               Sign In
             </Link>
           </p>

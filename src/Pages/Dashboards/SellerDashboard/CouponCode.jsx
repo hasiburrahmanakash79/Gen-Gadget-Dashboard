@@ -1,14 +1,13 @@
-import SectionTitle from '../../../components/SectionTitle/SectionTitle';
-import CouponTable from '../../../components/SellerDashboardWidgets/CouponCode/CouponTable';
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import CouponTable from "../../../components/SellerDashboardWidgets/CouponCode/CouponTable";
 
 const CouponCode = () => {
-    return (
-        <div className="p-10">
+  return (
+    <div className="p-10">
       <SectionTitle title="Coupon code" />
       <CouponTable />
-            
-        </div>
-    );
+    </div>
+  );
 };
 
 export default CouponCode;

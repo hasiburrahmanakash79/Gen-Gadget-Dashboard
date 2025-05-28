@@ -15,6 +15,8 @@ import SellerManagement from "../Pages/Dashboards/AdminDashboard/SellerManagemen
 import BuyerManagement from "../Pages/Dashboards/AdminDashboard/BuyerManagement";
 import Categories from "../Pages/Dashboards/AdminDashboard/Categories";
 import Activity from "../Pages/Dashboards/AdminDashboard/Activity";
+import ProductList from "../Pages/Dashboards/SellerDashboard/ProductList";
+import ProductReview from "../Pages/Dashboards/SellerDashboard/ProductReview";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
       {
         path: "/add_products",
         element: <AddNewProduct />,
+      },
+      {
+        path: "/product_list",
+        element: <ProductList />,
+      },
+      {
+        path: "/review",
+        element: <ProductReview />,
       },
       {
         path: "/profile",
