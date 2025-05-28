@@ -5,7 +5,7 @@ const productData = [
   {
     id: "#2HY6UH8HG",
     name: "iPhone 15 Pro Max - Natural Titanium",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-model-unselect-gallery-1-202309_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1693010533607",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 1,
     totalprice: 1249.5,
     status: "instock"
@@ -13,7 +13,7 @@ const productData = [
   {
     id: "#7PL0JU9KX",
     name: "iPhone 15 Pro Max - Blue Titanium",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-model-unselect-gallery-2-202309_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1693010533687",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 2,
     totalprice: 1299.0,
     status: "out of stock"
@@ -21,7 +21,7 @@ const productData = [
   {
     id: "#5KD8MJ1BC",
     name: "iPhone 15 Pro Max - White Titanium",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-model-unselect-gallery-3-202309_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1693010533034",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 3,
     totalprice: 1260.5,
     status: "instock"
@@ -29,7 +29,7 @@ const productData = [
   {
     id: "#9RU2DV3LZ",
     name: "iPhone 15 Pro Max - Black Titanium",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-model-unselect-gallery-4-202309_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1693010533600",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 4,
     totalprice: 1249.99,
     status: "out of stock"
@@ -37,7 +37,7 @@ const productData = [
   {
     id: "#1NC5KT4SA",
     name: "iPhone 15 Pro Max - 256GB",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-finish-select-202309-1_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1693524855531",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 5,
     totalprice: 1275.0,
     status: "instock"
@@ -45,7 +45,7 @@ const productData = [
   {
     id: "#4AX2ZR7TL",
     name: "iPhone 15 Pro Max - 512GB",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-finish-select-202309-2_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1693524855276",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 6,
     totalprice: 1349.0,
     status: "instock"
@@ -53,7 +53,7 @@ const productData = [
   {
     id: "#3GE1XM9PU",
     name: "iPhone 15 Pro Max - 1TB",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-finish-select-202309-3_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1693524855571",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 7,
     totalprice: 1499.0,
     status: "out of stock"
@@ -61,7 +61,7 @@ const productData = [
   {
     id: "#6BH9CE2DY",
     name: "iPhone 15 Pro Max - A17 Pro Chip",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-finish-select-202309-4_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1693524855945",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 8,
     totalprice: 1255.25,
     status: "instock"
@@ -69,7 +69,7 @@ const productData = [
   {
     id: "#8MW5RT3QX",
     name: "iPhone 15 Pro Max - USB-C Fast Charging",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-storage-select-202309-1_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1693593594094",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 9,
     totalprice: 1300.0,
     status: "instock"
@@ -77,7 +77,7 @@ const productData = [
   {
     id: "#0DP3VB6NH",
     name: "iPhone 15 Pro Max - 6.7-inch Display",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-storage-select-202309-2_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1693593594790",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 10,
     totalprice: 1279.0,
     status: "out of stock"
@@ -85,7 +85,7 @@ const productData = [
   {
     id: "#XY91MN8JK",
     name: "iPhone 15 Pro Max - Dynamic Island",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-dynamic-island-202309_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1694014871981",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 11,
     totalprice: 1299.0,
     status: "instock"
@@ -93,7 +93,7 @@ const productData = [
   {
     id: "#AB56DW2QE",
     name: "iPhone 15 Pro Max - Pro Camera System",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-camera-202309_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1694014871974",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 12,
     totalprice: 1269.5,
     status: "instock"
@@ -101,7 +101,7 @@ const productData = [
   {
     id: "#FR78YH3KD",
     name: "iPhone 15 Pro Max - Titanium Design",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-design-202309_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1694014872031",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 13,
     totalprice: 1280.0,
     status: "out of stock"
@@ -109,7 +109,7 @@ const productData = [
   {
     id: "#WU34CN5TS",
     name: "iPhone 15 Pro Max - USB-C Port",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-usb-c-202309_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1694014871993",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 14,
     totalprice: 1275.75,
     status: "instock"
@@ -117,7 +117,7 @@ const productData = [
   {
     id: "#OE73PW8VC",
     name: "iPhone 15 Pro Max - Action Button",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-action-button-202309_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1694014871983",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 15,
     totalprice: 1265.0,
     status: "out of stock"
@@ -125,7 +125,7 @@ const productData = [
   {
     id: "#BV63LK9YE",
     name: "iPhone 15 Pro Max - All-Day Battery",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-battery-202309_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1694014871932",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 16,
     totalprice: 1245.0,
     status: "instock"
@@ -133,7 +133,7 @@ const productData = [
   {
     id: "#KL29QA0RU",
     name: "iPhone 15 Pro Max - Face ID Security",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-security-202309_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1694014871963",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 17,
     totalprice: 1295.99,
     status: "instock"
@@ -141,7 +141,7 @@ const productData = [
   {
     id: "#UV17RE8FB",
     name: "iPhone 15 Pro Max - Recycled Materials",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-materials-202309_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1694014872021",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 18,
     totalprice: 1269.99,
     status: "instock"
@@ -149,7 +149,7 @@ const productData = [
   {
     id: "#GM38TL4WE",
     name: "iPhone 15 Pro Max - Eco Friendly",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-environment-202309_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1694014872044",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 19,
     totalprice: 1250.0,
     status: "out of stock"
@@ -157,7 +157,7 @@ const productData = [
   {
     id: "#ZX67NM1LO",
     name: "iPhone 15 Pro Max - Four Color Options",
-    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-colors-202309_FMT_WHH?wid=640&hei=640&fmt=jpeg&qlt=90&.v=1694014872041",
+    image: "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-15-Plus-(2)-(6)-5363.jpg",
     ordernumber: 20,
     totalprice: 1249.0,
     status: "instock"
@@ -196,7 +196,16 @@ const ProductList = () => {
                   key={product.id}
                   className="border-b border-gray-100 text-gray-700 hover:bg-gray-50"
                 >
-                  <td className="p-2 font-medium">{product.name}</td>
+                  <td className="p-2 font-medium">
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-12 h-12 object-cover rounded"
+                      />
+                      <span>{product.name}</span>
+                    </div>
+                  </td>
                   <td className="p-2">{product.ordernumber}</td>
                   <td className="p-2">{product.status}</td>
                   <td className="p-2 text-center space-x-3">
