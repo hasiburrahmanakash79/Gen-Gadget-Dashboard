@@ -6,7 +6,6 @@ export default function ProfilePage() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
   } = useForm();
 
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
