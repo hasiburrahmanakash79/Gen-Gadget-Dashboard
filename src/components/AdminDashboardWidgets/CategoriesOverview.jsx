@@ -25,7 +25,7 @@ const CategoriesOverview = () => {
   ];
 
   return (
-    <div className=" p-3 border border-gray-200 rounded-lg shadow-lg">
+    <div className=" p-3 border border-gray-100 rounded-lg shadow">
       <div className="">
         <p className="text-xl font-semibold mb-3">Categories</p>
         {categoryData.map((category) => (

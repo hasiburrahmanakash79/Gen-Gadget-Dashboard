@@ -1,4 +1,5 @@
 import CategoriesOverview from "../../../components/AdminDashboardWidgets/CategoriesOverview";
+import TopSeller from "../../../components/AdminDashboardWidgets/TopSeller";
 import UserDataCard from "../../../components/AdminDashboardWidgets/UserDataCard";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import TransectionOverview from "../../../components/SellerDashboardWidgets/TransectionAndTopProducts/TransectionOverview";
@@ -24,7 +25,7 @@ const AdminOverview = () => {
             <TransectionOverview/>
         </div>
         <div>
-            
+            <TopSeller/>
         </div>
       </div>
     </div>
