@@ -20,43 +20,43 @@ import {
 import CommonModal from "../../../components/UI/CommonModal";
 
 const users = [
-  { id: 1, userName: "John Doe", email: "john.doe@example.com", role: "admin", affectedItem: "electronics" },
-  { id: 2, userName: "Alice Smith", email: "alice.smith@example.com", role: "buyer", affectedItem: "clothes" },
-  { id: 3, userName: "Michael Johnson", email: "michael.johnson@example.com", role: "seller", affectedItem: "electronics" },
-  { id: 4, userName: "Emily Davis", email: "emily.davis@example.com", role: "admin", affectedItem: "clothes" },
-  { id: 5, userName: "Daniel Lee", email: "daniel.lee@example.com", role: "buyer", affectedItem: "electronics" },
-  { id: 6, userName: "Sophia Martinez", email: "sophia.martinez@example.com", role: "seller", affectedItem: "clothes" },
-  { id: 7, userName: "James Wilson", email: "james.wilson@example.com", role: "admin", affectedItem: "electronics" },
-  { id: 8, userName: "Olivia Anderson", email: "olivia.anderson@example.com", role: "buyer", affectedItem: "clothes" },
-  { id: 9, userName: "David Thomas", email: "david.thomas@example.com", role: "seller", affectedItem: "electronics" },
-  { id: 10, userName: "Ava Taylor", email: "ava.taylor@example.com", role: "admin", affectedItem: "clothes" },
-  { id: 11, userName: "Matthew Moore", email: "matthew.moore@example.com", role: "buyer", affectedItem: "electronics" },
-  { id: 12, userName: "Isabella Jackson", email: "isabella.jackson@example.com", role: "seller", affectedItem: "clothes" },
-  { id: 13, userName: "Joseph White", email: "joseph.white@example.com", role: "admin", affectedItem: "electronics" },
-  { id: 14, userName: "Mia Harris", email: "mia.harris@example.com", role: "buyer", affectedItem: "clothes" },
-  { id: 15, userName: "Benjamin Martin", email: "benjamin.martin@example.com", role: "seller", affectedItem: "electronics" },
-  { id: 16, userName: "Charlotte Thompson", email: "charlotte.thompson@example.com", role: "admin", affectedItem: "clothes" },
-  { id: 17, userName: "Elijah Garcia", email: "elijah.garcia@example.com", role: "buyer", affectedItem: "electronics" },
-  { id: 18, userName: "Amelia Martinez", email: "amelia.martinez@example.com", role: "seller", affectedItem: "clothes" },
-  { id: 19, userName: "Logan Robinson", email: "logan.robinson@example.com", role: "admin", affectedItem: "electronics" },
-  { id: 20, userName: "Harper Clark", email: "harper.clark@example.com", role: "buyer", affectedItem: "clothes" }
+  { id: 1, userName: "John Doe", email: "john.doe@example.com", role: "Admin", affectedItem: "Electronics" },
+  { id: 2, userName: "Alice Smith", email: "alice.smith@example.com", role: "Admin", affectedItem: "Clothes" },
+  { id: 3, userName: "Michael Johnson", email: "michael.johnson@example.com", role: "Seller", affectedItem: "Electronics" },
+  { id: 4, userName: "Emily Davis", email: "emily.davis@example.com", role: "Admin", affectedItem: "Clothes" },
+  { id: 5, userName: "Daniel Lee", email: "daniel.lee@example.com", role: "Buyer", affectedItem: "Electronics" },
+  { id: 6, userName: "Sophia Martinez", email: "sophia.martinez@example.com", role: "Seller", affectedItem: "Clothes" },
+  { id: 7, userName: "James Wilson", email: "james.wilson@example.com", role: "Admin", affectedItem: "Electronics" },
+  { id: 8, userName: "Olivia Anderson", email: "olivia.anderson@example.com", role: "Buyer", affectedItem: "Clothes" },
+  { id: 9, userName: "David Thomas", email: "david.thomas@example.com", role: "Seller", affectedItem: "Electronics" },
+  { id: 10, userName: "Ava Taylor", email: "ava.taylor@example.com", role: "Admin", affectedItem: "Clothes" },
+  { id: 11, userName: "Matthew Moore", email: "matthew.moore@example.com", role: "Buyer", affectedItem: "Electronics" },
+  { id: 12, userName: "Isabella Jackson", email: "isabella.jackson@example.com", role: "Seller", affectedItem: "Clothes" },
+  { id: 13, userName: "Joseph White", email: "joseph.white@example.com", role: "Admin", affectedItem: "Electronics" },
+  { id: 14, userName: "Mia Harris", email: "mia.harris@example.com", role: "Buyer", affectedItem: "Clothes" },
+  { id: 15, userName: "Benjamin Martin", email: "benjamin.martin@example.com", role: "Seller", affectedItem: "Electronics" },
+  { id: 16, userName: "Charlotte Thompson", email: "charlotte.thompson@example.com", role: "Admin", affectedItem: "Clothes" },
+  { id: 17, userName: "Elijah Garcia", email: "elijah.garcia@example.com", role: "Buyer", affectedItem: "Electronics" },
+  { id: 18, userName: "Amelia Martinez", email: "amelia.martinez@example.com", role: "Seller", affectedItem: "Clothes" },
+  { id: 19, userName: "Logan Robinson", email: "logan.robinson@example.com", role: "Admin", affectedItem: "Electronics" },
+  { id: 20, userName: "Harper Clark", email: "harper.clark@example.com", role: "Buyer", affectedItem: "Clothes" }
 ];
 
 
-const BuyerManagement = () => {
+const Activity = () => {
   const [showModal, setShowModal] = useState(false);
-  const [selectedBuyer, setSelectedBuyer] = useState(null);
+  const [selectedUser, setSelectedUser] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortAsc, setSortAsc] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
   // Filter by name or phone search
-  const filteredBuyer = users
+  const filteredUser = users
     .filter(
-      (cust) =>
-        cust.userName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        cust.email.toLowerCase().includes(searchTerm.toLowerCase())
+      (user) =>
+        user.userName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        user.email.toLowerCase().includes(searchTerm.toLowerCase())
     )
     .sort((a, b) => {
       // Sort by name
@@ -65,8 +65,8 @@ const BuyerManagement = () => {
       return 0;
     });
 
-  const totalPages = Math.ceil(filteredBuyer.length / itemsPerPage);
-  const paginatedBuyer = filteredBuyer.slice(
+  const totalPages = Math.ceil(filteredUser.length / itemsPerPage);
+  const paginatedUser = filteredUser.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
@@ -83,7 +83,7 @@ const BuyerManagement = () => {
               <input
                 type="text"
                 className="px-8 py-2 bg-gray-100 rounded-md text-sm outline-none"
-                placeholder="Search by name or phone"
+                placeholder="Search by name..."
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
                   setCurrentPage(1);
@@ -115,25 +115,25 @@ const BuyerManagement = () => {
               </tr>
             </thead>
             <tbody>
-              {paginatedBuyer.map((cust, idx) => (
+              {paginatedUser.map((user, idx) => (
                 <tr
-                  key={cust.id}
+                  key={user.id}
                   className="border-b border-gray-100 text-gray-700 hover:bg-gray-50"
                 >
                   <td className="p-4">
                     {(currentPage - 1) * itemsPerPage + idx + 1}
                   </td>
-                  <td className="p-2 font-medium">{cust.userName}</td>
-                  <td className="p-2">{cust.email}</td>
-                  <td className="p-2">{cust.role}</td>
-                  <td className="p-2 ">{cust.affectedItem}</td>
+                  <td className="p-2 font-medium">{user.userName}</td>
+                  <td className="p-2">{user.email}</td>
+                  <td className="p-2">{user.role}</td>
+                  <td className="p-2 ">{user.affectedItem}</td>
                   
                   <td className="p-2 text-center space-x-3">
                     <button
                       title="Edit"
                       className="text-gray-500 hover:text-blue-800"
                       onClick={() => {
-                        setSelectedBuyer(cust);
+                        setSelectedUser(user);
                         setShowModal(true);
                       }}
                     >
@@ -142,14 +142,14 @@ const BuyerManagement = () => {
                     <button
                       title="Delete"
                       className="text-gray-500 hover:text-red-600"
-                      onClick={() => alert(`Delete Buyer ${cust.name}`)}
+                      onClick={() => alert(`Delete User ${user.name}`)}
                     >
                       <RiDeleteBin6Line size={20} />
                     </button>
                   </td>
                 </tr>
               ))}
-              {paginatedBuyer.length === 0 && (
+              {paginatedUser.length === 0 && (
                 <tr>
                   <td colSpan="7" className="text-center py-6 text-gray-500">
                     No User found
@@ -194,7 +194,7 @@ const BuyerManagement = () => {
         </div>
 
         <CommonModal isOpen={showModal} onClose={() => setShowModal(false)}>
-          {selectedBuyer && (
+          {selectedUser && (
             <div className="p-4">
               <div className="flex items-center gap-3 mb-4">
                 <img
@@ -203,10 +203,10 @@ const BuyerManagement = () => {
                 />
                 <div>
                   <h2 className="font-bold text-lg text-[#004D40]">
-                    {selectedBuyer.userName}
+                    {selectedUser.userName}
                   </h2>
                   <p className="text-sm text-gray-500">
-                    {selectedBuyer.email}
+                    {selectedUser.email}
                   </p>
                 </div>
               </div>
@@ -220,7 +220,7 @@ const BuyerManagement = () => {
                     <RiPhoneLine />
                   </span>
                   +3974853457
-                  {/* {selectedBuyer.phone} */}
+                  {/* {selectedUser.phone} */}
                 </div>
                 <div className="flex items-center gap-2 border border-gray-200 px-3 py-2 rounded text-sm">
                   <RiMapPinLine />
@@ -304,4 +304,4 @@ const BuyerManagement = () => {
   );
 };
 
-export default BuyerManagement;
+export default Activity;
