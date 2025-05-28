@@ -115,13 +115,13 @@ const Activity = () => {
               </tr>
             </thead>
             <tbody>
-              {paginatedUser.map((user, idx) => (
+              {paginatedUser.map((user) => (
                 <tr
                   key={user.id}
                   className="border-b border-gray-100 text-gray-700 hover:bg-gray-50"
                 >
                   <td className="p-4">
-                    {(currentPage - 1) * itemsPerPage + idx + 1}
+                    {user.id}
                   </td>
                   <td className="p-2 font-medium">{user.userName}</td>
                   <td className="p-2">{user.email}</td>
