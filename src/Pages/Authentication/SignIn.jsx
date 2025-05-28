@@ -25,22 +25,21 @@ const SignIn = () => {
   return (
     <div className="grid grid-cols-7 min-h-screen bg-base-200">
       {/* Left Side */}
-      <div className="col-span-3 bg-blue-500 flex items-center p-8">
-        <h2 className="text-white text-4xl font-bold leading-relaxed">
-          Welcome Back! Verify Your <br /> Email to Access Your <br /> Learning
-          Portal!
+      <div className="col-span-3 bg-[#006850] place-content-center place-items-center p-8">
+        <h2 className="text-white text-4xl font-bold text-center">
+          Welcome Back! Verify Your <br /> Email to Access Your <br />
         </h2>
       </div>
 
       {/* Right Side */}
       <div className="col-span-4 flex items-center justify-center ">
-        <div className="max-w-lg w-full bg-white rounded-3xl border border-blue-200 shadow-md p-16">
+        <div className="max-w-lg w-full bg-white rounded-3xl border border-[#006850] shadow-md p-16">
           <h2 className="text-2xl font-bold text-center mb-2">
             Sign in Account
           </h2>
           <p className="text-center text-sm mb-6">
             Don’t have an Account?{" "}
-            <Link to='/signup' className="text-blue-500 hover:underline">
+            <Link to='/signup' className="text-[#006850] hover:underline">
               Sign Up Free
             </Link>
           </p>
@@ -58,7 +57,7 @@ const SignIn = () => {
                     required: "Username is required",
                   })}
                   placeholder="Enter your user name"
-                  className="w-full border border-base-300 bg-base-200 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-base-300 bg-base-200 rounded-md p-2 focus:outline-none"
                 />
                 <FaUser className="absolute inset-y-3 right-3 flex items-center text-gray-500" />
               </div>
@@ -78,7 +77,7 @@ const SignIn = () => {
                     required: "Password is required",
                   })}
                   placeholder="Enter your Password"
-                  className="w-full border border-base-300 bg-base-200 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-base-300 bg-base-200 rounded-md p-2 focus:outline-none"
                 />
                 <button
                   type="button"
@@ -103,7 +102,7 @@ const SignIn = () => {
                   />
                   Remember for 30 Days
                 </div>
-                <a href="#" className="text-blue-500 hover:underline">
+                <a href="#" className="text-[#006850] hover:underline">
                   Forgot Password?
                 </a>
               </div>
@@ -111,7 +110,7 @@ const SignIn = () => {
 
             <button
               type="submit"
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-md"
+              className="w-full bg-[#006850] text-white font-semibold py-2 rounded-md"
             >
               Login
             </button>
@@ -142,7 +141,7 @@ const SignIn = () => {
           {/* Bottom Signup */}
           <p className="text-center text-sm mt-6">
             Don’t have an account?{" "}
-            <Link to='/signup' className="text-blue-500 hover:underline">
+            <Link to='/signup' className="text-[#006850] hover:underline">
               Sign Up Free
             </Link>
           </p>

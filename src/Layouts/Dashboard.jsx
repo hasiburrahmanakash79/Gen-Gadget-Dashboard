@@ -22,7 +22,7 @@ import Swal from "sweetalert2";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(true);
-  const isAdmin = true;
+  const isAdmin = false;
   const location = useLocation();
   const handleLogout = () => {
     Swal.fire({

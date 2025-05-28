@@ -30,7 +30,7 @@ const OtpVerification = () => {
     // Redirect after short delay
     setTimeout(() => {
       setIsSubmitting(false); // Reset submitting state
-      navigate("/");
+      navigate("/seller_overview"); // Redirect to admin overview
     }, 2000);
   };
 
@@ -78,9 +78,9 @@ const OtpVerification = () => {
   return (
     <div className="grid grid-cols-7 min-h-screen">
       {/* Left Side */}
-      <div className="col-span-3 bg-blue-500 flex items-center justify-center p-8">
-        <h2 className="text-white text-4xl font-bold leading-relaxed">
-          Confirm Your Email to Access Educational Resources!
+      <div className="col-span-3 bg-[#006850] place-content-center place-items-center p-8">
+        <h2 className="text-white text-4xl font-bold text-center">
+          Confirm Your Email
         </h2>
       </div>
 
@@ -109,7 +109,7 @@ const OtpVerification = () => {
                       message: "Must be a single digit",
                     },
                   })}
-                  className="w-12 h-12 text-center border border-base-300 bg-base-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
+                  className="w-12 h-12 text-center border border-base-300 bg-base-200 rounded-md focus:outline-none "
                   ref={(el) => (inputRefs.current[index] = el)}
                   onChange={(e) => handleInputChange(e, index)}
                   onKeyDown={(e) => handleKeyDown(e, index)}
@@ -129,7 +129,7 @@ const OtpVerification = () => {
                 <button
                   type="button"
                   onClick={handleResendOtp}
-                  className="text-blue-500 hover:underline"
+                  className="text-[#006850] hover:underline"
                 >
                   Resend OTP
                 </button>
@@ -143,7 +143,7 @@ const OtpVerification = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-md flex items-center justify-center"
+              className="w-full bg-[#006850] text-white font-semibold py-2 rounded-md flex items-center justify-center"
             >
               {isSubmitting ? (
                 <>
@@ -176,7 +176,7 @@ const OtpVerification = () => {
           </form>
 
           {/* Back Button */}
-          <div className="flex items-center justify-center text-blue-500 mt-4 hover:underline">
+          <div className="flex items-center justify-center text-[#006850] mt-4 hover:underline">
             <button
               onClick={() => window.history.back()}
               className="flex items-center"
