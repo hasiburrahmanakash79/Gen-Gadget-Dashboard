@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { FaCamera } from "react-icons/fa";
+import { RiCloseFill } from "react-icons/ri";
 
 export default function AddNewProduct() {
   const [startDate, setStartDate] = useState();
@@ -74,6 +76,9 @@ export default function AddNewProduct() {
       const newUrl = URL.createObjectURL(file);
       setGallery((prev) => [...prev, newUrl]);
     }
+  };
+  const handleRemoveImage = (index) => {
+    setGallery((prev) => prev.filter((_, i) => i !== index));
   };
 
   const { register, handleSubmit } = useForm();
@@ -225,13 +230,6 @@ export default function AddNewProduct() {
             Highlight this product in a featured section.
           </label>
         </div>
-
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-        >
-          Publish Product
-        </button>
       </div>
 
       {/* Right Column */}
@@ -239,15 +237,24 @@ export default function AddNewProduct() {
         <div>
           <h2 className="text-xl font-semibold mb-2">Upload Product Image</h2>
           {/* Main Image Block */}
-          <div className="border border-gray-200 rounded-lg p-4">
-            <div className="border border-gray-200 p-2 rounded mb-4 place-content-center place-items-center">
-              <img
-                src={mainImage}
-                className="w-72 h-72 object-cover border border-gray-100 mb-2 rounded-lg"
-              />
+          <div className="border border-gray-200 rounded-lg p-4 place-items-center">
+            <div className="mb-4">
+              <label className="w-72 h-72 border border-gray-200 rounded-lg flex items-center justify-center cursor-pointer overflow-hidden relative group">
+                {/* Image or Camera Icon */}
+                {mainImage ? (
+                  <img
+                    src={mainImage}
+                    alt="Uploaded"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="flex flex-col items-center text-gray-400 group-hover:text-blue-500">
+                    <FaCamera className="text-4xl mb-2" />
+                    <p className="text-sm">Click to upload image</p>
+                  </div>
+                )}
 
-              <label className="inline-block border border-gray-100 px-4 py-1 rounded cursor-pointer hover:bg-gray-100">
-                Upload image
+                {/* Hidden File Input */}
                 <input
                   type="file"
                   accept="image/*"
@@ -258,27 +265,36 @@ export default function AddNewProduct() {
             </div>
 
             {/* Gallery */}
-            <div className="flex gap-2 mt-4 flex-wrap">
-              {gallery.map((img, i) => (
-                <img
-                  key={i}
-                  src={img}
-                  alt={`Gallery ${i + 1}`}
-                  className="w-20 h-20 object-cover rounded border"
-                />
-              ))}
+           <div className="flex gap-2 mt-4 flex-wrap">
+      {gallery.map((img, i) => (
+        <div key={i} className="relative group">
+          <img
+            src={img}
+            alt={`Gallery ${i + 1}`}
+            className="w-20 h-20 object-cover rounded border border-gray-200 shadow"
+          />
+          {/* Remove button */}
+          <button
+            onClick={() => handleRemoveImage(i)}
+            className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full p-1 text-xs hidden group-hover:block"
+            title="Remove"
+          >
+            <RiCloseFill />
+          </button>
+        </div>
+      ))}
 
-              {/* Add New Image Button */}
-              <label className="w-20 h-20 border border-dashed border-gray-200 rounded flex items-center justify-center text-gray-500 cursor-pointer text-3xl font-bold">
-                +
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleAddToGallery}
-                  className="hidden"
-                />
-              </label>
-            </div>
+      {/* Add New Image Button */}
+      <label className="w-20 h-20 border border-dashed border-gray-200 rounded flex items-center justify-center text-gray-500 cursor-pointer text-3xl font-bold">
+        +
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleAddToGallery}
+          className="hidden"
+        />
+      </label>
+    </div>
           </div>
         </div>
 
@@ -304,7 +320,7 @@ export default function AddNewProduct() {
             {tags.map((tag, i) => (
               <span
                 key={i}
-                className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full flex items-center gap-1"
+                className="bg-green-100 text-green-800 px-3 py-1 border border-green-500 rounded-full flex items-center gap-1"
               >
                 {tag}
                 <button
@@ -379,6 +395,13 @@ export default function AddNewProduct() {
             ))}
           </div>
         </div>
+
+        <button
+          type="submit"
+          className="w-full bg-[#006850] text-white py-3 rounded hover:shadow-lg transition-shadow duration-200 font-semibold"
+        >
+          Publish Product
+        </button>
       </div>
     </form>
   );
