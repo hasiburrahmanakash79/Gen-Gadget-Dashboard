@@ -1,15 +1,42 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaCamera, FaEye, FaEyeSlash } from "react-icons/fa";
 import { RiFacebookCircleFill, RiLinkedinBoxFill } from "react-icons/ri";
 
 export default function ProfilePage() {
-  const { register, handleSubmit } = useForm();
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+const [editMode, setEditMode] = useState(false);
+  const [image, setImage] = useState("https://randomuser.me/api/portraits/men/75.jpg");
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+  } = useForm({
+    defaultValues: {
+      firstName: "Wade",
+      lastName: "Warren",
+      phone: "(406) 555-0120",
+      email: "wade.warren@example.com",
+      dob: "1999-01-12",
+      location: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
+      creditCard: "843-4359-4444",
+      bio: "",
+    },
+  });
 
   const onSubmit = (data) => {
-    console.log(data);
+    console.log("Updated data:", data);
+    setEditMode(false);
+  };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const imgURL = URL.createObjectURL(file);
+      setImage(imgURL);
+    }
   };
 
   return (
@@ -93,114 +120,59 @@ export default function ProfilePage() {
 
       {/* Profile Form */}
       <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="bg-white rounded-lg shadow p-6 col-span-2"
-      >
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold">Profile Update</h2>
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              className="text-sm bg-gray-100 px-4 py-1.5 rounded border border-gray-300"
-            >
-              Edit
-            </button>
-          </div>
-        </div>
+      onSubmit={handleSubmit(onSubmit)}
+      className="bg-white rounded-lg shadow p-6 col-span-2"
+    >
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-xl font-semibold">Profile Update</h2>
+        <button
+          type="button"
+          onClick={() => setEditMode(true)}
+          className="text-sm bg-gray-100 px-4 py-1.5 rounded border border-gray-300"
+        >
+          Edit
+        </button>
+      </div>
 
+      <div className="relative w-32 h-32 mb-4">
         <img
-          src="https://randomuser.me/api/portraits/men/75.jpg"
-          className="w-32 h-32 rounded-full object-cover mb-4"
+          src={image}
+          className="w-32 h-32 rounded-full object-cover"
           alt="profile"
         />
+        {editMode && (
+          <label className="absolute top-1 right-1 bg-white p-1 rounded-full shadow cursor-pointer">
+            <FaCamera className="text-gray-600 text-lg" />
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              className="hidden"
+            />
+          </label>
+        )}
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              First Name
-            </label>
-            <input
-              {...register("firstName")}
-              defaultValue="Wade"
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Last Name
-            </label>
-            <input
-              {...register("lastName")}
-              defaultValue="Warren"
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-            />
-          </div>
-          
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Phone Number
-            </label>
-            <input
-              {...register("phone")}
-              defaultValue="(406) 555-0120"
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              E-mail
-            </label>
-            <input
-              {...register("email")}
-              defaultValue="wade.warren@example.com"
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Date of Birth
-            </label>
-            <input
-              type="date"
-              {...register("dob")}
-              defaultValue="1999-01-12"
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-            />
-          </div>
-          <div className="">
-            <label className="block text-sm font-medium text-gray-700">
-              Location
-            </label>
-            <input
-              {...register("location")}
-              defaultValue="2972 Westheimer Rd. Santa Ana, Illinois 85486"
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-            />
-          </div>
-          
-          <div className="col-span-2">
-            <label className="block text-sm font-medium text-gray-700">
-              Credit Card
-            </label>
-            <input
-              {...register("creditCard")}
-              defaultValue="843-4359-4444"
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-            />
-          </div>
-          <div className="col-span-2">
-            <label className="block text-sm font-medium text-gray-700">
-              Biography
-            </label>
-            <textarea
-              {...register("bio")}
-              placeholder="Enter a biography about you"
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-              rows={3}
-            />
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <InputField label="First Name" name="firstName" register={register} editable={editMode} watch={watch} />
+        <InputField label="Last Name" name="lastName" register={register} editable={editMode} watch={watch} />
+        <InputField label="Phone Number" name="phone" register={register} editable={editMode} watch={watch} />
+        <InputField label="E-mail" name="email" register={register} editable={editMode} watch={watch} />
+        <InputField label="Date of Birth" name="dob" type="date" register={register} editable={editMode} watch={watch} />
+        <InputField label="Location" name="location" register={register} editable={editMode} watch={watch} />
+        <InputField label="Credit Card" name="creditCard" register={register} editable={editMode} watch={watch} colSpan={2} />
+        <div className="col-span-2">
+          <label className="block text-sm font-medium text-gray-700">Biography</label>
+          <textarea
+            {...register("bio")}
+            disabled={!editMode}
+            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+            rows={3}
+          />
         </div>
+      </div>
 
+      {editMode && (
         <div className="flex justify-end mt-6">
           <button
             type="submit"
@@ -209,7 +181,21 @@ export default function ProfilePage() {
             Save Change
           </button>
         </div>
-      </form>
+      )}
+    </form>
     </div>
   );
 }
+
+const InputField = ({ label, name, type = "text", register, editable, colSpan, watch }) => (
+  <div className={colSpan ? `col-span-${colSpan}` : ""}>
+    <label className="block text-sm font-medium text-gray-700">{label}</label>
+    <input
+      type={type}
+      {...register(name)}
+      value={watch(name)}
+      disabled={!editable}
+      className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+    />
+  </div>
+);
