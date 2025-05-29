@@ -89,7 +89,7 @@ export default function TrafficMonitoringCard() {
 
       <div className="space-y-2">
         {countryData.map((item, idx) => (
-          <div key={idx} className="flex items-center justify-between">
+          <div key={idx} className="grid grid-cols-2 items-center gap-4">
             <div className="flex items-center gap-3">
               <img
                 src={`https://flagcdn.com/w40/${item.flag}.png`}
@@ -102,7 +102,7 @@ export default function TrafficMonitoringCard() {
               </div>
             </div>
             <div className="flex flex-col items-end">
-              <div className="w-56 h-2 bg-gray-200 rounded-full overflow-hidden mb-1">
+              <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden mb-1">
                 <div
                   className="h-full bg-indigo-500 rounded-full"
                   style={{ width: `${parseFloat(item.percent)}%` }}
