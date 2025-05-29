@@ -3,17 +3,36 @@ import { useState } from "react";
 import { FaCamera, FaEye, FaEyeSlash } from "react-icons/fa";
 import { RiFacebookCircleFill, RiLinkedinBoxFill } from "react-icons/ri";
 
+const InputField = ({
+  label,
+  name,
+  type = "text",
+  register,
+  editable,
+  colSpan,
+  watch,
+}) => (
+  <div className={colSpan ? `col-span-${colSpan}` : ""}>
+    <label className="block text-sm font-medium text-gray-700">{label}</label>
+    <input
+      type={type}
+      {...register(name)}
+      value={watch(name)}
+      disabled={!editable}
+      className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+    />
+  </div>
+);
+
 export default function ProfilePage() {
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-const [editMode, setEditMode] = useState(false);
-  const [image, setImage] = useState("https://randomuser.me/api/portraits/men/75.jpg");
+  const [editMode, setEditMode] = useState(false);
+  const [image, setImage] = useState(
+    "https://randomuser.me/api/portraits/men/75.jpg"
+  );
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-  } = useForm({
+  const { register, handleSubmit, watch } = useForm({
     defaultValues: {
       firstName: "Wade",
       lastName: "Warren",
@@ -120,82 +139,117 @@ const [editMode, setEditMode] = useState(false);
 
       {/* Profile Form */}
       <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="bg-white rounded-lg shadow p-6 col-span-2"
-    >
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-semibold">Profile Update</h2>
-        <button
-          type="button"
-          onClick={() => setEditMode(true)}
-          className="text-sm bg-gray-100 px-4 py-1.5 rounded border border-gray-300"
-        >
-          Edit
-        </button>
-      </div>
-
-      <div className="relative w-32 h-32 mb-4">
-        <img
-          src={image}
-          className="w-32 h-32 rounded-full object-cover"
-          alt="profile"
-        />
-        {editMode && (
-          <label className="absolute top-1 right-1 bg-white p-1 rounded-full shadow cursor-pointer">
-            <FaCamera className="text-gray-600 text-lg" />
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange}
-              className="hidden"
-            />
-          </label>
-        )}
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <InputField label="First Name" name="firstName" register={register} editable={editMode} watch={watch} />
-        <InputField label="Last Name" name="lastName" register={register} editable={editMode} watch={watch} />
-        <InputField label="Phone Number" name="phone" register={register} editable={editMode} watch={watch} />
-        <InputField label="E-mail" name="email" register={register} editable={editMode} watch={watch} />
-        <InputField label="Date of Birth" name="dob" type="date" register={register} editable={editMode} watch={watch} />
-        <InputField label="Location" name="location" register={register} editable={editMode} watch={watch} />
-        <InputField label="Credit Card" name="creditCard" register={register} editable={editMode} watch={watch} colSpan={2} />
-        <div className="col-span-2">
-          <label className="block text-sm font-medium text-gray-700">Biography</label>
-          <textarea
-            {...register("bio")}
-            disabled={!editMode}
-            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-            rows={3}
-          />
-        </div>
-      </div>
-
-      {editMode && (
-        <div className="flex justify-end mt-6">
+        onSubmit={handleSubmit(onSubmit)}
+        className="bg-white rounded-lg shadow p-6 col-span-2"
+      >
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl font-semibold">Profile Update</h2>
           <button
-            type="submit"
-            className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded shadow"
+            type="button"
+            onClick={() => setEditMode(true)}
+            className="text-sm bg-gray-100 px-4 py-1.5 rounded border border-gray-300"
           >
-            Save Change
+            Edit
           </button>
         </div>
-      )}
-    </form>
+
+        <div className="relative w-32 h-32 mb-4">
+          <img
+            src={image}
+            className="w-32 h-32 rounded-full object-cover"
+            alt="profile"
+          />
+          {editMode && (
+            <label className="absolute top-1 right-1 bg-white p-1 rounded-full shadow cursor-pointer">
+              <FaCamera className="text-gray-600 text-lg" />
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                className="hidden"
+              />
+            </label>
+          )}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <InputField
+            label="First Name"
+            name="firstName"
+            register={register}
+            editable={editMode}
+            watch={watch}
+          />
+          <InputField
+            label="Last Name"
+            name="lastName"
+            register={register}
+            editable={editMode}
+            watch={watch}
+          />
+          <InputField
+            label="Phone Number"
+            name="phone"
+            register={register}
+            editable={editMode}
+            watch={watch}
+          />
+          <InputField
+            label="E-mail"
+            name="email"
+            register={register}
+            editable={editMode}
+            watch={watch}
+          />
+          <InputField
+            label="Date of Birth"
+            name="dob"
+            type="date"
+            register={register}
+            editable={editMode}
+            watch={watch}
+          />
+          <InputField
+            label="Location"
+            name="location"
+            register={register}
+            editable={editMode}
+            watch={watch}
+          />
+          <InputField
+            label="Credit Card"
+            name="creditCard"
+            register={register}
+            editable={editMode}
+            watch={watch}
+            colSpan={2}
+          />
+          <div className="col-span-2">
+            <label className="block text-sm font-medium text-gray-700">
+              Biography
+            </label>
+            <textarea
+              {...register("bio")}
+              disabled={!editMode}
+              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+              rows={3}
+            />
+          </div>
+        </div>
+
+        {editMode && (
+          <div className="flex justify-end mt-6">
+            <button
+              type="submit"
+              className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded shadow"
+            >
+              Save Change
+            </button>
+          </div>
+        )}
+      </form>
     </div>
   );
 }
 
-const InputField = ({ label, name, type = "text", register, editable, colSpan, watch }) => (
-  <div className={colSpan ? `col-span-${colSpan}` : ""}>
-    <label className="block text-sm font-medium text-gray-700">{label}</label>
-    <input
-      type={type}
-      {...register(name)}
-      value={watch(name)}
-      disabled={!editable}
-      className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
-    />
-  </div>
-);
+

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import logo from "../assets/logo/logo.png";
+import arrow from "../assets/logo/arrow.png";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import {
   RiCoupon3Line,
@@ -7,7 +8,6 @@ import {
   RiUserCommunityLine,
   RiShoppingCart2Line,
   RiAddCircleLine,
-  RiContractLeftLine,
   RiBankCardLine,
   RiBox3Line,
   RiMessageLine,
@@ -22,7 +22,7 @@ import Swal from "sweetalert2";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(true);
-  const isAdmin = false;
+  const isAdmin = true;
   const location = useLocation();
   const handleLogout = () => {
     Swal.fire({
@@ -165,17 +165,20 @@ const Dashboard = () => {
           open ? "w-64 p-4" : "w-20 text-center"
         } h-screen shadow-lg border-r border-gray-200 fixed left-0 top-0 bottom-0 z-50 pt-8 transition-all duration-500`}
       >
-        <RiContractLeftLine
-          className={`absolute cursor-pointer right-1 text-gray-600 top-5 rounded-full ${
-            !open && "rotate-180"
-          }`}
-          onClick={() => setOpen(!open)}
-        />
-        <div className="p-2">
+        
+        <div className="p-2 flex items-center justify-between">
           <img
             src={logo}
             alt="logo"
-            className={`cursor-pointer w-10 duration-500 ${!open && "w-full "}`}
+            className={`cursor-pointer w-10 duration-300 ${!open && "w-12 "}`}
+          />
+          <img
+            src={arrow}
+            alt=""
+            onClick={() => setOpen(!open)}
+            className={`cursor-pointer w-6 duration-500 ${
+              !open && "rotate-180"
+            }`}
           />
         </div>
 
