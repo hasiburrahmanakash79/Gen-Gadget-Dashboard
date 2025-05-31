@@ -130,7 +130,7 @@ export default function ProfilePage() {
             </div>
           </div>
           <div className="mt-6">
-            <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded shadow">
+            <button className="bg-[#078165] text-white px-6 py-2 rounded shadow w-full">
               Save Change
             </button>
           </div>
@@ -241,7 +241,7 @@ export default function ProfilePage() {
           <div className="flex justify-end mt-6">
             <button
               type="submit"
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded shadow"
+              className="bg-[#078165] text-white px-6 py-2 rounded shadow"
             >
               Save Change
             </button>
