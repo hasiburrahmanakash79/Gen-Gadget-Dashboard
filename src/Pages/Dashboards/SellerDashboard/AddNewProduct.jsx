@@ -6,9 +6,7 @@ import { RiCloseFill } from "react-icons/ri";
 export default function AddNewProduct() {
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
-  const [selectedColor, setSelectedColor] = useState(null);
   const [productCategory, setProductCategory] = useState("phone");
-  const [productTag, setProductTag] = useState("new");
   const [stockStatus, setStockStatus] = useState("In Stock");
 
   const [mainImage, setMainImage] = useState("");
@@ -88,9 +86,7 @@ export default function AddNewProduct() {
       ...data,
       startDate,
       endDate,
-      selectedColor,
       productCategory,
-      productTag,
       stockStatus,
       mainImage,
       gallery,
@@ -265,36 +261,36 @@ export default function AddNewProduct() {
             </div>
 
             {/* Gallery */}
-           <div className="flex gap-2 mt-4 flex-wrap">
-      {gallery.map((img, i) => (
-        <div key={i} className="relative group">
-          <img
-            src={img}
-            alt={`Gallery ${i + 1}`}
-            className="w-20 h-20 object-cover rounded border border-gray-200 shadow"
-          />
-          {/* Remove button */}
-          <button
-            onClick={() => handleRemoveImage(i)}
-            className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full p-1 text-xs hidden group-hover:block"
-            title="Remove"
-          >
-            <RiCloseFill />
-          </button>
-        </div>
-      ))}
+            <div className="flex gap-2 mt-4 flex-wrap">
+              {gallery.map((img, i) => (
+                <div key={i} className="relative group">
+                  <img
+                    src={img}
+                    alt={`Gallery ${i + 1}`}
+                    className="w-20 h-20 object-cover rounded border border-gray-200 shadow"
+                  />
+                  {/* Remove button */}
+                  <button
+                    onClick={() => handleRemoveImage(i)}
+                    className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full p-1 text-xs hidden group-hover:block"
+                    title="Remove"
+                  >
+                    <RiCloseFill />
+                  </button>
+                </div>
+              ))}
 
-      {/* Add New Image Button */}
-      <label className="w-20 h-20 border border-dashed border-gray-200 rounded flex items-center justify-center text-gray-500 cursor-pointer text-3xl font-bold">
-        +
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleAddToGallery}
-          className="hidden"
-        />
-      </label>
-    </div>
+              {/* Add New Image Button */}
+              <label className="w-20 h-20 border border-dashed border-gray-200 rounded flex items-center justify-center text-gray-500 cursor-pointer text-3xl font-bold">
+                +
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleAddToGallery}
+                  className="hidden"
+                />
+              </label>
+            </div>
           </div>
         </div>
 
@@ -359,7 +355,7 @@ export default function AddNewProduct() {
                     color.class || ""
                   }`}
                   style={{ backgroundColor: color.value }}
-                  title={color.name}
+                  title={color.value}
                 >
                   {isSelected && (
                     <div className="w-full h-full rounded ring-2 ring-offset-2 ring-blue-400"></div>
@@ -387,12 +383,7 @@ export default function AddNewProduct() {
 
           {/* Selected Colors */}
           <div className="mt-2 text-sm text-gray-700">
-            Selected Colors:{" "}
-            {selectedColors.map((c, i) => (
-              <span key={i} className="mr-2">
-                {c.name}
-              </span>
-            ))}
+            Selected Colors: {selectedColors.length}
           </div>
         </div>
 

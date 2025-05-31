@@ -81,8 +81,8 @@ const SectionTitle = ({ title }) => {
 
         {/* 🔽 Dropdown */}
         {open && (
-          <div className="absolute right-0 top-16 w-96 bg-white rounded-xl shadow-xl z-50 border border-gray-100">
-            <div className="py-2 px-5 shadow font-semibold text-gray-700">
+          <div className="absolute right-0 top-16 w-96 bg-white rounded-xl shadow-xl z-50 border border-[#DBDBDB]">
+            <div className="py-2 px-5 shadow font-semibold rounded-t-xl text-gray-700">
               Notifications
             </div>
             <div className="max-h-80 overflow-y-auto">
