@@ -1,7 +1,12 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { FaCamera, FaEye, FaEyeSlash } from "react-icons/fa";
-import { RiFacebookCircleFill, RiLinkedinBoxFill } from "react-icons/ri";
+import google_icon from '../../../assets/logo/google.png'
+import facebook_icon from '../../../assets/logo/facebook.png'
+import x_icon from '../../../assets/logo/twitter_x.png'
+import link_icon from '../../../assets/logo/link-angled.png'
+import { X } from "lucide-react";
+
 
 const InputField = ({
   label,
@@ -19,7 +24,7 @@ const InputField = ({
       {...register(name)}
       value={watch(name)}
       disabled={!editable}
-      className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+      className="mt-1 block w-full bg-[#F9FAFB] border border-[#E5E7EB] rounded-md p-2 pr-10"
     />
   </div>
 );
@@ -69,11 +74,21 @@ export default function ProfilePage() {
             alt="profile"
           />
           <h2 className="text-xl font-semibold">Wade Warren</h2>
-          <p className="text-gray-500 text-md mb-10">wade.warren@example.com</p>
-          <p className="text-md text-gray-400">Linked with Social media</p>
-          <div className="flex items-center justify-center gap-3 mt-2 text-3xl">
-            <RiFacebookCircleFill className="text-blue-500" />
-            <RiLinkedinBoxFill className="text-blue-400" />
+          <p className="text-gray-500 text-md mb-7">wade.warren@example.com</p>
+          <p className="text-md text-[#4B5563]">Linked with Social media</p>
+          <div className="flex items-center justify-center gap-5 mt-2 text-3xl">
+            <div className="flex items-center gap-2">
+              <img src={google_icon} alt="" className="w-6" />
+              <a href="www.google.com" target="_blank" className="text-[#6467F2] hover:underline flex items-center text-sm"> <img src={link_icon} className="w-5" alt="" /> Linked</a>
+            </div>
+            <div className="flex items-center gap-2">
+              <img src={facebook_icon} alt="" className="w-6" />
+              <a href="www.facebook.com" target="_blank" className="text-[#6467F2] hover:underline flex items-center text-sm"> <img src={link_icon} className="w-5" alt="" /> Linked</a>
+            </div>
+            <div className="flex items-center gap-2">
+              <img src={x_icon} alt="" className="w-5" />
+              <a href="www.x.com" target="_blank" className="text-[#6467F2] hover:underline flex items-center text-sm"> <img src={link_icon} className="w-5" alt="" /> Linked</a>
+            </div>
           </div>
         </div>
         {/* Password Section */}
@@ -86,7 +101,7 @@ export default function ProfilePage() {
               </label>
               <input
                 type={showNewPassword ? "text" : "password"}
-                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 pr-10"
+                className="mt-1 block w-full bg-[#F9FAFB] border border-[#E5E7EB] rounded-md p-2 pr-10"
               />
               <span
                 className="absolute right-3 top-[38px] cursor-pointer text-gray-500"
@@ -104,7 +119,7 @@ export default function ProfilePage() {
               </label>
               <input
                 type={showConfirmPassword ? "text" : "password"}
-                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 pr-10"
+                className="mt-1 block w-full bg-[#F9FAFB] border border-[#E5E7EB] rounded-md p-2 pr-10"
               />
               <span
                 className="absolute right-3 top-[38px] cursor-pointer text-gray-500"
@@ -119,7 +134,7 @@ export default function ProfilePage() {
               </label>
               <input
                 type={showConfirmPassword ? "text" : "password"}
-                className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 pr-10"
+                className="mt-1 block w-full bg-[#F9FAFB] border border-[#E5E7EB] rounded-md p-2 pr-10"
               />
               <span
                 className="absolute right-3 top-[38px] cursor-pointer text-gray-500"
@@ -231,7 +246,8 @@ export default function ProfilePage() {
             <textarea
               {...register("bio")}
               disabled={!editMode}
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+              placeholder="Write something about yourself..."
+              className="mt-1 block w-full bg-[#F9FAFB] border border-[#E5E7EB] rounded-md p-2 pr-10"
               rows={3}
             />
           </div>

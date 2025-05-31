@@ -106,8 +106,19 @@ const WeeklyReportChart = () => {
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip
-              contentStyle={{ fontSize: "12px" }}
-              labelStyle={{ fontWeight: "bold" }}
+              contentStyle={{
+                fontSize: "14px",
+                color: "#000000", 
+                backgroundColor: "rgba(22, 150, 70, 0.3)",
+                borderRadius: "10px",
+                padding: "8px",
+                border: "1px solid #16a34a",
+                textAlign: "center", 
+              }}
+              labelStyle={{
+                fontWeight: "bold",
+                color: "#000000",
+              }}
             />
             <Area
               type="monotone"
