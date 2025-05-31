@@ -5,7 +5,6 @@ import google_icon from '../../../assets/logo/google.png'
 import facebook_icon from '../../../assets/logo/facebook.png'
 import x_icon from '../../../assets/logo/twitter_x.png'
 import link_icon from '../../../assets/logo/link-angled.png'
-import { X } from "lucide-react";
 
 
 const InputField = ({
