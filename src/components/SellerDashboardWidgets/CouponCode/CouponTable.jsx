@@ -100,9 +100,9 @@ export default function CouponTable() {
   // Filter by name or phone search
   const filteredCoupon = couponData
     .filter(
-      (cust) =>
-        cust.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        cust.code.toLowerCase().includes(searchTerm.toLowerCase())
+      (coupon) =>
+        coupon.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        coupon.code.toLowerCase().includes(searchTerm.toLowerCase())
     )
     .sort((a, b) => {
       if (a.title.toLowerCase() < b.title.toLowerCase()) return sortAsc ? -1 : 1;
